@@ -23,6 +23,9 @@ function ContactForm() {
                     field="email"
                     errors={state.errors}
                 />
+                <Form.Label htmlFor="message">
+                    Message
+                </Form.Label>
                 <Form.Control
                     id="message"
                     name="message"
