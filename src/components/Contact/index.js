@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { Form, Button } from 'react-bootstrap'
 
 function ContactForm() {
     const [state, handleSubmit] = useForm("xyylldzy");
@@ -7,33 +8,35 @@ function ContactForm() {
         return <p>Thanks for joining!</p>;
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="email">
-                Email Address
-            </label>
-            <input
-                id="email"
-                type="email"
-                name="email"
-            />
-            <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-            />
-            <textarea
-                id="message"
-                name="message"
-            />
-            <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-            />
-            <button type="submit" disabled={state.submitting}>
-                Submit
-            </button>
-        </form>
+        <Form onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label htmlFor="email">
+                    Email Address
+                </Form.Label>
+                <Form.Control
+                    id="email"
+                    type="email"
+                    name="email"
+                />
+                <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                />
+                <Form.Control
+                    id="message"
+                    name="message"
+                />
+                <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                />
+                <Button type="submit" disabled={state.submitting}>
+                    Submit
+                </Button>
+            </Form.Group>
+        </Form>
     );
 }
 export default ContactForm

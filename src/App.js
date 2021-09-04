@@ -8,7 +8,6 @@ import ContactForm from './components/Contact';
 function App() {
   const [portfolioData, setportfolioData] = useState([])
   useEffect(() => {
-    const portfolio = []
     return fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=brobro10000')
       .then(res => res.text())
       .then(res => {
@@ -34,7 +33,6 @@ function App() {
             }
           })
         })
-
       });
   }, []);
   return (
