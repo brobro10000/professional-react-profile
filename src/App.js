@@ -5,8 +5,23 @@ import { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
 import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
+import About from './components/About';
 function App() {
   const [portfolioData, setportfolioData] = useState([])
+  const [currentPage, handlePageChange] = useState('About');
+  console.log(currentPage)
+  const renderPage = () => {
+    // Add a switch statement that will return the appropriate component of the 'currentPage'
+    // YOUR CODE HERE
+    //
+    switch (currentPage) {
+      case 'Contact':
+        return <ContactForm />
+      case 'Portfolio':
+        return <Portfolio />
+      default: return <About />
+    }
+  };
   useEffect(() => {
     return fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=brobro10000')
       .then(res => res.text())
@@ -16,20 +31,20 @@ function App() {
           arr.push(element.split(`",`)[0])
         })
         delete arr[0]
-        arr = arr.filter(() => true)
-        arr.forEach(arr => {
-          fetch(`https://api.github.com/repos/brobro10000/${arr}/deployments`).then(res => res.json()).then(data => {
+        const newArr = arr.filter(() => true)
+        newArr.forEach(element => {
+          fetch(`https://api.github.com/repos/brobro10000/${element}/deployments`).then(res => res.json()).then(data => {
             if (data.length < 1)
-              if (arr === 'potluck-chefs') {
-                return setportfolioData((state) => [...state, { name: arr, repo: `https://www.github.com/${arr}`, deployment: `https://potluck-chef.herokuapp.com/` }])
+              if (element === 'potluck-chefs') {
+                return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: `https://potluck-chef.herokuapp.com/` }])
               }
             if (data[0].environment === 'github-pages') {
-              if (arr === `brobro10000.github.io`) {
-                return setportfolioData((state) => [...state, { name: arr, repo: `https://www.github.com/${arr}`, deployment: `https://www.brobro10000.github.io` }])
+              if (element === `brobro10000.github.io`) {
+                return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: `https://www.brobro10000.github.io` }])
               }
-              return setportfolioData((state) => [...state, { name: arr, repo: `https://www.github.com/${arr}`, deployment: `https://www.brobro10000.github.io/${arr}` }])
+              return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: `https://www.brobro10000.github.io/${element}` }])
             } else if (data[0].description === 'Heroku') {
-              return setportfolioData((state) => [...state, { name: arr, repo: `https://www.github.com/${arr}`, deployment: data[0].payload.web_url }])
+              return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: data[0].payload.web_url }])
             }
           })
         })
@@ -38,17 +53,18 @@ function App() {
   return (
     <div>
       <header>
-        <Navigation />
+        <Navigation currentPage={currentPage} handlePageChange={handlePageChange}/>
       </header>
       <main>
-        {portfolioData.length > 0 ?
-          <Portfolio portfolioData={portfolioData} /> : <></>
-        }
-        <ContactForm />
+        {renderPage()}
       </main>
     </div>
   );
 
 }
-
+/* <About />
+        {portfolioData.length > 0 ?
+          <Portfolio portfolioData={portfolioData} /> : <></>
+        }
+        <ContactForm /> */
 export default App;
