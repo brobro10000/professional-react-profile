@@ -6,19 +6,20 @@ import Navigation from './components/Navigation';
 import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
 import About from './components/About';
+
 function App() {
   const [portfolioData, setportfolioData] = useState([])
   const [currentPage, handlePageChange] = useState('About');
   console.log(currentPage)
+
   const renderPage = () => {
-    // Add a switch statement that will return the appropriate component of the 'currentPage'
-    // YOUR CODE HERE
-    //
     switch (currentPage) {
       case 'Contact':
         return <ContactForm />
       case 'Portfolio':
-        return <Portfolio />
+        return portfolioData.length > 0 ?
+          <Portfolio portfolioData={portfolioData} /> : <></>
+        
       default: return <About />
     }
   };
@@ -62,9 +63,5 @@ function App() {
   );
 
 }
-/* <About />
-        {portfolioData.length > 0 ?
-          <Portfolio portfolioData={portfolioData} /> : <></>
-        }
-        <ContactForm /> */
+
 export default App;
