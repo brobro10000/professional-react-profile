@@ -21,9 +21,9 @@ function App() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'Contact':
+      case 'ContactMe':
         return <ContactForm />
-      case 'Portfolio':
+      case 'FeaturedPortfolio':
         return portfolioData.length > 0 ?
           <Portfolio portfolioData={portfolioData} /> : <></>
       default: return <About />
