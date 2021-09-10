@@ -4,7 +4,7 @@ import image from '../../assets/images/me.jpg'
 
 import resume from '../../assets/files/resume.pdf'
 function Navigation(props) {
-  const nav = ['AboutMe', 'FeaturedPortfolio','ContactMe']
+  const nav = ['About', 'Portfolio','Contact']
   useEffect(() => {
     document.getElementById('portrait').setAttribute('style', 'height:auto;width:100;max-width:100px;margin-right:15px')
   })
@@ -18,7 +18,7 @@ function Navigation(props) {
           <Nav className="me-auto">
             {nav.map(nav => (
               <Nav.Link
-                href={'#' + nav.toLowerCase()}
+                href={'#_' + nav.toLowerCase()}
                 onClick={() => props.handlePageChange(nav)}
                 className={
                   props.currentPage === nav ? 'nav-link active' : 'nav-link'
