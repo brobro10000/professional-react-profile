@@ -18,6 +18,7 @@ function Navigation(props) {
           <Nav className="me-auto">
             {nav.map(nav => (
               <Nav.Link
+                key = {nav}
                 href={'#_' + nav.toLowerCase()}
                 onClick={() => props.handlePageChange(nav)}
                 className={
