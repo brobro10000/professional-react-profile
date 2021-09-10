@@ -12,13 +12,13 @@ function Navigation(props) {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container fluid>
         <Image id='portrait' alt='Dev-Image' src={image} roundedCircle />
-        <Navbar.Brand href="#home">Hamzah Ullah</Navbar.Brand>
+        <Navbar.Brand >Hamzah Ullah</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             {nav.map(nav => (
               <Nav.Link
-                href={'#' + nav.toLowerCase()}
+                href={'/#' + nav.toLowerCase()}
                 onClick={() => props.handlePageChange(nav)}
                 className={
                   props.currentPage === nav ? 'nav-link active' : 'nav-link'
@@ -31,7 +31,5 @@ function Navigation(props) {
     </Navbar>
   );
 }
-//    <Nav.Link href="#about">About Me</Nav.Link> 
-//         <Nav.Link href="#portfolio">Portfolio</Nav.Link>
-//         <Nav.Link href="#contact">Contact</Nav.Link>
+
 export default Navigation
