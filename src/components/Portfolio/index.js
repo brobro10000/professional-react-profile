@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Card } from 'react-bootstrap';
 
 function Portfolio({ portfolioData, images }) {
@@ -17,7 +17,7 @@ function Portfolio({ portfolioData, images }) {
                         <Card.Title>{element.name}</Card.Title>
                         </Card.Header>
                     <Card.Body>
-                        <Card.Img variant='middle' src={element.img} />
+                        <Card.Img classname='image' variant='middle' src={element.img} />
                     </Card.Body>
                     <Card.Footer>
                         <Card.Link href={element.repo}>{element.repo}</Card.Link>

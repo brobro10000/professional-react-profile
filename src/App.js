@@ -45,6 +45,7 @@ function App() {
       default: return <About />
     }
   };
+  
   useEffect(() => {
     request.onsuccess = (event) => {
       db = event.target.result;
@@ -88,41 +89,7 @@ function App() {
         }
       }
     }
-    
-    // return fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=brobro10000')
-    //   .then(res => res.text())
-    //   .then(res => {
-    //     var arr = []
-    //     res.split(`"repo":"`).forEach(element => {
-    //       arr.push(element.split(`",`)[0])
-    //     })
-    //     delete arr[0]
-    //     const newArr = arr.filter(() => true)
-    //     newArr.forEach(element => {
-    //       fetch(`https://api.github.com/repos/brobro10000/${element}/deployments`).then(res => res.json()).then(data => {
-    //         if (data.length < 1)
-    //           if (element === 'potluck-chefs') {
-    //             saveRecord({ name: element, repo: `https://www.github.com/${element}`, deployment: `https://potluck-chef.herokuapp.com/` })
-    //             return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: `https://potluck-chef.herokuapp.com/` }])
-    //           }
-    //         if (data[0].environment === 'github-pages') {
-    //           if (element === `brobro10000.github.io`) {
-    //             saveRecord({ name: element, repo: `https://www.github.com/${element}`, deployment: `https://www.brobro10000.github.io` })
-    //             return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: `https://www.brobro10000.github.io` }])
-    //           }
-    //           saveRecord({ name: element, repo: `https://www.github.com/${element}`, deployment: `https://www.brobro10000.github.io/${element}` })
-    //           return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: `https://www.brobro10000.github.io/${element}` }])
-    //         } else if (data[0].description === 'Heroku') {
-    //           saveRecord({ name: element, repo: `https://www.github.com/${element}`, deployment: data[0].payload.web_url })
-    //           return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/${element}`, deployment: data[0].payload.web_url }])
-    //         }
-    //       })
-    //     })
-    //   });
   }, []);
-
-  console.log(portfolioData)
-
   return (
     <div>
       <header>
