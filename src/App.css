@@ -2,7 +2,7 @@
   font-family: 'Tenor Sans', sans-serif;
 }
 main {
-  margin-bottom:100px
+  margin-bottom:100px;
 }
 .App {
   text-align: center;
@@ -67,10 +67,6 @@ main {
 .footer-container {
   justify-content: center !important;
 }
-/* .form-label {
-
-} */
-
 .error {
   color:red
 }
@@ -85,5 +81,52 @@ main {
   width: 90%;
   height:100%;
   min-height: 700px;
+}
+#aboutContainer{
+  margin-top: 25px;
+}
+#aboutImage,#portrait, .navbar, #aboutCard {
+  border-style: ridge;
+  border-color: cornflowerblue;
+}
+#headerNav {
+  border-top:none;
+  border-right:none;
+  border-left:none;
+  border-width: 7.5px;
+}
+#footerNav {
+  border-bottom:none;
+  border-right:none;
+  border-left:none;
+  border-width: 7.5px;
+}
+#aboutCard {
+  padding: 15px;
+  border-width: 5px;
+  background: aliceblue;
+}
+#aboutImage {
+  height:auto;
+  width: 100%;
+  border-style: outset;
+  border-color: cornflowerblue;
+  
+}
+#aboutTitle {
+  margin:5px;
+  text-align: center;
+  font-size: x-large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: underline;
+  text-decoration-color: cornflowerblue;
+}
 
+#aboutText{
+  align-self: center;
+}
+#mission {
+  text-align: center !important;
+  font-size: x-large !important;
+  font-weight:bolder;
 }

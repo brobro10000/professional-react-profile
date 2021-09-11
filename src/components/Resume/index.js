@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Accordion, ListGroup } from 'react-bootstrap';
 
 function Resume({ resume }) {
     resume += '#zoom=65'
@@ -7,38 +7,51 @@ function Resume({ resume }) {
         <Container id='resume-container'>
             <Row>
                 <Col>
-                    <Accordion>
+                    <Accordion defaultActiveKey='3'>
                         <Accordion.Item eventKey="3">
-                            <Accordion.Header>Skills</Accordion.Header>
+                            <Accordion.Header>Technical Skills</Accordion.Header>
                             <Accordion.Body>
-                            <Accordion defaultActiveKey = '0' flush >
-                                <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Accordion Item #1</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                                <Accordion.Item eventKey="1">
-                                    <Accordion.Header>Accordion Item #2</Accordion.Header>
-                                    <Accordion.Body>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-                        </Accordion.Body>
-                    </Accordion.Item>
+                                <Accordion  flush >
+                                    <Accordion.Item eventKey="0">
+                                        <Accordion.Header>Web Development</Accordion.Header>
+                                        <Accordion.Body>
+                                            <ListGroup variant="flush">
+                                                <ListGroup.Item>HTML5 and the Document Object Model</ListGroup.Item>
+                                                <ListGroup.Item>CSS and the Box Model</ListGroup.Item>
+                                                <ListGroup.Item>JQuery</ListGroup.Item>
+                                                <ListGroup.Item>Materialize</ListGroup.Item>
+                                                <ListGroup.Item>Bootstrap/React-Bootstrap</ListGroup.Item>
+                                                <ListGroup.Item>SQL - mySQL</ListGroup.Item>
+                                                <ListGroup.Item>MongoDB </ListGroup.Item>
+                                                <ListGroup.Item>Express</ListGroup.Item>
+                                                <ListGroup.Item>React</ListGroup.Item>
+                                                <ListGroup.Item>NodeJS </ListGroup.Item>
+                                                <ListGroup.Item>Visual Studio Code </ListGroup.Item>
+                                                <ListGroup.Item>Partials and Layouts with Handlebars </ListGroup.Item>
+                                                <ListGroup.Item>API Development and Integration</ListGroup.Item>
+                                                <ListGroup.Item>Database Structure and Routing</ListGroup.Item>
+                                                <ListGroup.Item>MVC - Model View Controller Model</ListGroup.Item>
+                                                <ListGroup.Item>Progressive Web Applications</ListGroup.Item>
+                                                <ListGroup.Item>Site Optimization - Compression, Service Workers and IndexedDb </ListGroup.Item>
+                                                <ListGroup.Item>Version Control using Git CLI and Github </ListGroup.Item>
+                                            </ListGroup>
+                                        </Accordion.Body>
+                                    </Accordion.Item>
+                                    <Accordion.Item eventKey="1">
+                                        <Accordion.Header>Languages</Accordion.Header>
+                                        <Accordion.Body>
+                                            <ListGroup variant="flush">
+                                                <ListGroup.Item>Javascript - Full Stack Web Development</ListGroup.Item>
+                                                <ListGroup.Item>Python - Machine Learning, Computer Vision, Mathematical and Data Analysis</ListGroup.Item>
+                                                <ListGroup.Item>C, Java - Algorithms</ListGroup.Item>
+                                                <ListGroup.Item>C# - Game Development in Unity</ListGroup.Item>
+                                                <ListGroup.Item>Verilog and Assembly with TI-MSP Board Family</ListGroup.Item>
+                                            </ListGroup>
+                                        </Accordion.Body>
+                                    </Accordion.Item>
+                                </Accordion>
+                            </Accordion.Body>
+                        </Accordion.Item>
                     </Accordion>
                 </Col>
                 <Col><iframe id='resume-iframe' src={resume}></iframe></Col>

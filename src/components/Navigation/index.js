@@ -8,9 +8,9 @@ function Navigation(props) {
     document.getElementById('portrait').setAttribute('style', 'height:auto;width:100;max-width:100px;margin-right:15px')
   })
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar id='headerNav' collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container fluid>
-        <Image id='portrait' alt='Dev-Image' src={image} roundedCircle />
+        <Image id='portrait' alt='Dev-Image' src={image} rounded />
         <Navbar.Brand className='myName'>Hamzah Ullah</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
