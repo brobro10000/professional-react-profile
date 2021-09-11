@@ -1,23 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Form, Button, Container } from 'react-bootstrap'
+import { validateEmail } from '../../utils/helpers';
 
 function ContactForm() {
     const [state, handleSubmit] = useForm("xyylldzy");
-    if (state.succeeded) {
-        return <p>We Received your Message!</p>;
+    const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+    const [errorMessage, setErrorMessage] = useState('');
+    const { name, email, message } = formState;
+  
+        if (state.succeeded) {
+            return <p>We Received your Message!</p>;
+        }
+    function stage1Error(e) {
+        if (e.target.name === 'email') {
+            const isValid = validateEmail(e.target.value);
+            console.log(isValid);
+            // isValid conditional statement
+            if (!isValid) {
+                setErrorMessage('email is invalid.');
+            } else {
+                setErrorMessage('');
+            }
+        } else {
+            if (!e.target.value.length) {
+                setErrorMessage(`${e.target.name} is required.`);
+            } else {
+                setErrorMessage('');
+            }
+        }
+        if (!errorMessage) {
+            setFormState({ ...formState, [e.target.name]: e.target.value });
+        }
+        console.log(errorMessage.split(' ')[errorMessage.length-1])
     }
+    var displayEmailError = errorMessage.split(' ')[2] == 'invalid.' ? <Form.Label className='form-labels error'> {errorMessage} </Form.Label> : ''
+    console.log(errorMessage)
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
-                    <Form.Label className='form-labels' htmlFor="email">
-                        Email Address
+                    <Form.Label className='form-labels' htmlFor="name">
+                        Full Name
                     </Form.Label>
                     <Form.Control
+                        placeholder={errorMessage.split(' ')[0] == 'name' ? errorMessage: null}
+                        id="name"
+                        type="name"
+                        name="name"
+                        onBlur={stage1Error}
+                    />
+                    <ValidationError
+                        prefix="name"
+                        field="name"
+                        errors={state.errors}
+                    />
+                    <Form.Label className='form-labels' htmlFor="email">
+                        Email Address {errorMessage.split(' ')[2] == 'invalid.' ? displayEmailError : ''}
+                    </Form.Label>
+                    <Form.Control
+                        placeholder={errorMessage.split(' ')[0] == 'email' ? errorMessage: null}
                         id="email"
                         type="email"
                         name="email"
+                        onBlur={stage1Error}
                     />
                     <ValidationError
                         prefix="Email"
@@ -28,8 +74,10 @@ function ContactForm() {
                         Message
                     </Form.Label>
                     <Form.Control
+                        placeholder={errorMessage.split(' ')[0] == 'message' ? errorMessage: null}
                         id="message"
                         name="message"
+                        onBlur={stage1Error}
                     />
                     <ValidationError
                         prefix="Message"

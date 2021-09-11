@@ -54,7 +54,7 @@ function App() {
       const apiObjectStore = api.objectStore('api');
       const getAll = apiObjectStore.getAll();
       getAll.onsuccess = () => {
-        if (getAll.result.length == 6) {
+        if (getAll.result.length === 6) {
           return setportfolioData(getAll.result)
         } else {
           return fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=brobro10000')
