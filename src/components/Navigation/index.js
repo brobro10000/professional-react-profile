@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import { Nav, Navbar, Container, Image } from 'react-bootstrap';
 import image from '../../assets/images/me.jpg'
 
@@ -12,7 +12,7 @@ function Navigation(props) {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container fluid>
         <Image id='portrait' alt='Dev-Image' src={image} roundedCircle />
-        <Navbar.Brand >Hamzah Ullah</Navbar.Brand>
+        <Navbar.Brand className='myName'>Hamzah Ullah</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

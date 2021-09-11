@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
 import About from './components/About';
+import Footer from './components/Footer';
 import budget from './assets/images/budget-analysis-and-visualizer.png'
 import crypto from './assets/images/Crypto-Tycoon.png'
 import potluck from './assets/images/potluck-chefs.png'
@@ -98,6 +99,9 @@ function App() {
       <main>
         {renderPage()}
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 

@@ -1,7 +1,13 @@
+*{
+  font-family: 'Tenor Sans', sans-serif;
+}
+main {
+  margin-bottom:100px
+}
 .App {
   text-align: center;
+ 
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +42,31 @@
     transform: rotate(360deg);
   }
 }
+
+.image {
+  height:auto;
+  width:100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.link-title{
+  text-align: center;
+}
+
+.project-card{
+  margin-bottom:10px;
+}
+
+.col-container {
+  text-align: -webkit-center;
+}
+.myName{
+  font-size: xxx-large !important;
+}
+.footer-container {
+  justify-content: center !important;
+}
+/* .form-label {
+
+} */
