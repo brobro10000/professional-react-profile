@@ -2,9 +2,8 @@ import React, {useEffect} from 'react';
 import { Nav, Navbar, Container, Image } from 'react-bootstrap';
 import image from '../../assets/images/me.jpg'
 
-import resume from '../../assets/files/resume.pdf'
 function Navigation(props) {
-  const nav = ['About', 'Portfolio','Contact']
+  const nav = ['About', 'Portfolio','Contact','Resume']
   useEffect(() => {
     document.getElementById('portrait').setAttribute('style', 'height:auto;width:100;max-width:100px;margin-right:15px')
   })
@@ -25,7 +24,6 @@ function Navigation(props) {
                   props.currentPage === nav ? 'nav-link active' : 'nav-link'
                 }>{nav}</Nav.Link>
             ))}
-            <Nav.Link href={resume} download>Resume</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
