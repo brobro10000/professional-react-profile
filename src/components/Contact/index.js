@@ -8,7 +8,7 @@ function ContactForm() {
     const [errorMessage, setErrorMessage] = useState('');
 
     if (state.succeeded) {
-        return <p>We Received your Message!</p>;
+        return <p id='returnMessage'>We Received your Message!</p>;
     }
     function stage1Error(e) {
         console.log(e.target.value)
