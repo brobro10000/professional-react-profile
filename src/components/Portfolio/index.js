@@ -39,10 +39,10 @@ function Portfolio({ portfolioData, images }) {
                                 <Card.Footer>
                                     <Row>
                                         <Col>
-                                            <Card.Link href={element.repo}>Repository</Card.Link>
+                                            <Card.Link href={element.repo} target='_blank'>Repository</Card.Link>
                                         </Col>
                                         <Col>
-                                            <Card.Link href={element.deployment}>Website</Card.Link>
+                                            <Card.Link href={element.deployment}  target='_blank'>Website</Card.Link>
                                         </Col>
                                     </Row>
                                 </Card.Footer>

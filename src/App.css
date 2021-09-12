@@ -5,6 +5,12 @@ main {
   margin-top: 175px;
   margin-bottom:100px;
 }
+:target::before {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0px; /* fixed header height*//* negative fixed header height */
+}
 .App {
   text-align: center;
  
@@ -160,6 +166,7 @@ main {
 .buttonContainer {
   text-align: center;
 }
+
 @media screen and (max-width: 990px){
   .tocContainer {
     visibility: hidden;
@@ -185,6 +192,9 @@ main {
   main {
     margin-top: 100px;
     margin-bottom:100px;
+  }
+  :target::before {
+    margin: -100px 0 0; /* negative fixed header height */
   }
   #portrait {
     max-width:50px;
