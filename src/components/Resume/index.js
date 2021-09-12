@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container, Row, Col, Accordion, ListGroup } from 'react-bootstrap';
 
 function Resume({ resume }) {

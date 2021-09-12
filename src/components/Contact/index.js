@@ -28,7 +28,6 @@ function ContactForm() {
                 return setErrorMessage(capitalizeFirstLetter(e.target.name) + " is required")
         }
     }
-    // var displayEmailError = errorMessage.split(' ')[2] === 'Invalid' ? <Form.Label className='form-labels error'> {'* ' + errorMessage} </Form.Label> : ''
     return (
         <Container id='formContainer'>
             <Form onSubmit={handleSubmit}>
