@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import { Card, Container, Row, Col, ListGroup, Accordion } from 'react-bootstrap';
 
 function Portfolio({ portfolioData, images }) {
+    const [topItem,setTop] = useState([portfolioData, 0])
     images.forEach(element1 => {
         var imgname = element1.split('/')[4].split('.')[0]
         portfolioData.forEach(element2 => {
@@ -9,6 +10,22 @@ function Portfolio({ portfolioData, images }) {
                 element2.img = element1
         })
     })
+    function handleSort(e){
+        var targetName = e.target.firstChild.data
+        for(var i=0; i<portfolioData.length;i++){
+            if(targetName === portfolioData[i].name){
+                var temp = portfolioData[i]
+                portfolioData[i] = portfolioData[0]
+                portfolioData[0] = temp
+                setTop([portfolioData,i])
+                break;
+            }
+        }
+    }
+    useEffect(() => {
+         window.scrollTo(0,0)
+    }, [topItem])
+
     return (
         <>
             <Container id='portfolioContainer'>
@@ -20,7 +37,8 @@ function Portfolio({ portfolioData, images }) {
                                     <Accordion.Header>Table of Contents</Accordion.Header>
                                     <Accordion.Body>
                                         {portfolioData.length > 0 && portfolioData.map(element => (
-                                            <ListGroup.Item action href={'#' + element.name} key={element.name}>{element.name}</ListGroup.Item>
+                                            <ListGroup.Item action onClick={handleSort}  key={element.name}>{element.name}</ListGroup.Item>
+                                         
                                         ))}
                                     </Accordion.Body>
                                 </Accordion.Item>

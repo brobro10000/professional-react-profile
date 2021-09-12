@@ -56,7 +56,7 @@ function Resume({ resume }) {
                     </Accordion>
                 </Col>
                 <Col>
-                    <a id='resume-download' href={resume2} download='UllahHamzah' target="_blank" rel="noreferrer">Download</a>
+                    <a id='resume-download' href={resume2} download='UllahHamzah' target="_blank" rel="noreferrer">Download Resume</a>
                     <iframe title='resume' id='resume-iframe' src={resume}></iframe>
                 </Col>
             </Row>
