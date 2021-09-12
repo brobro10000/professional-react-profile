@@ -8,7 +8,7 @@ function Navigation(props) {
     document.getElementById('portrait').setAttribute('style', 'height:auto;width:100;max-width:100px;margin-right:15px')
   })
   return (
-    <Navbar id='headerNav' collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar fixed='top' id='headerNav' collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container fluid>
         <Image id='portrait' alt='Dev-Image' src={image} rounded />
         <Navbar.Brand className='myName'>Hamzah Ullah</Navbar.Brand>

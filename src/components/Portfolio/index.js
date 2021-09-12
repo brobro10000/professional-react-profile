@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col, ListGroup, Accordion } from 'react-bootstrap';
 
 function Portfolio({ portfolioData, images }) {
     images.forEach(element1 => {
@@ -13,9 +13,23 @@ function Portfolio({ portfolioData, images }) {
         <>
             <Container>
                 <Row>
-                    {portfolioData.length > 0 && portfolioData.map(element => (
-                        <Col key={element.name} s={12} m={4} lg={4} className='col-container'>
-                            <Card className='project-card' style={{ width: '18rem' }}>
+                    <Col s={12} m={4} lg={4}>
+                        <ListGroup style={{ position: 'fixed' }} variant="flush">
+                            <Accordion defaultActiveKey='4'>
+                                <Accordion.Item eventKey='4'>
+                                    <Accordion.Header>Table of Contents</Accordion.Header>
+                                    <Accordion.Body>
+                                        {portfolioData.length > 0 && portfolioData.map(element => (
+                                            <ListGroup.Item action href={'#' + element.name} key={element.name}>{element.name}</ListGroup.Item>
+                                        ))}
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                        </ListGroup>
+                    </Col>
+                    <Col s={12} m={8} lg={8} className='col-container'>
+                        {portfolioData.length > 0 && portfolioData.map(element => (
+                            <Card key={'#' + element.name} id={element.name} className='project-card' style={{ width: '80%' }}>
                                 <Card.Header>
                                     <Card.Title>{element.name}</Card.Title>
                                 </Card.Header>
@@ -33,8 +47,8 @@ function Portfolio({ portfolioData, images }) {
                                     </Row>
                                 </Card.Footer>
                             </Card>
-                        </Col>
-                    ))}
+                        ))}
+                    </Col>
                 </Row>
             </Container>
         </>

@@ -2,6 +2,7 @@
   font-family: 'Tenor Sans', sans-serif;
 }
 main {
+  margin-top: 175px;
   margin-bottom:100px;
 }
 .App {
@@ -45,11 +46,16 @@ main {
 
 .image {
   height:auto;
-  width:100%;
-  max-width: 300px;
+  min-height: 30vh;
+  max-height: 80vh;
+  width:inherit;
+  max-width: 500px;
   text-align: center;
 }
-
+.card-body{
+  width:100%;
+  background: aliceblue;
+}
 .link-title{
   text-align: center;
 }
