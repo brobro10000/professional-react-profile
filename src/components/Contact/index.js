@@ -31,7 +31,7 @@ function ContactForm() {
     }
     var displayEmailError = errorMessage.split(' ')[2] === 'Invalid' ? <Form.Label className='form-labels error'> {'* ' + errorMessage} </Form.Label> : ''
     return (
-        <Container>
+        <Container id='formContainer'>
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
                     <Form.Label className='form-labels' htmlFor="name">
@@ -64,7 +64,7 @@ function ContactForm() {
                         field="email"
                         errors={state.errors}
                     />
-                    <Form.Label htmlFor="message">
+                    <Form.Label className='form-labels' htmlFor="message">
                         Message
                     </Form.Label>
                     <Form.Control
@@ -79,9 +79,11 @@ function ContactForm() {
                         field="message"
                         errors={state.errors}
                     />
-                    <Button type="submit" disabled={state.submitting}>
-                        Submit
-                    </Button>
+                    <Container className='buttonContainer'>
+                        <Button className='submitButton' type="submit" disabled={state.submitting}>
+                            Submit
+                        </Button>
+                    </Container>
                 </Form.Group>
             </Form>
         </Container>
