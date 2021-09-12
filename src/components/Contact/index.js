@@ -11,6 +11,9 @@ function ContactForm() {
         return <p>We Received your Message!</p>;
     }
     function stage1Error(e) {
+        console.log(e.target.value)
+        if (e.target.value === '')
+            return setErrorMessage(capitalizeFirstLetter(e.target.name) + " is required")
         if (e.target.name === 'email') {
             const isValid = validateEmail(e.target.value);
             console.log(isValid);
@@ -21,15 +24,11 @@ function ContactForm() {
                 setErrorMessage('');
             }
         } else {
-            if (!e.target.value.length) {
-                setErrorMessage(`${capitalizeFirstLetter(e.target.name)} is required`);
-            } else {
-                setErrorMessage(null);
-            }
+            if (e.target.value === '')
+                return setErrorMessage(capitalizeFirstLetter(e.target.name) + " is required")
         }
-
     }
-    var displayEmailError = errorMessage.split(' ')[2] === 'Invalid' ? <Form.Label className='form-labels error'> {'* ' + errorMessage} </Form.Label> : ''
+    // var displayEmailError = errorMessage.split(' ')[2] === 'Invalid' ? <Form.Label className='form-labels error'> {'* ' + errorMessage} </Form.Label> : ''
     return (
         <Container id='formContainer'>
             <Form onSubmit={handleSubmit}>
@@ -38,7 +37,7 @@ function ContactForm() {
                         Full Name
                     </Form.Label>
                     <Form.Control
-                        placeholder={errorMessage.split(' ')[0] === 'Name' ? errorMessage : null}
+                        placeholder={errorMessage && errorMessage.split(' ')[0] === 'Name' ? errorMessage : ''}
                         id="name"
                         type="name"
                         name="name"
@@ -50,10 +49,10 @@ function ContactForm() {
                         errors={state.errors}
                     />
                     <Form.Label className='form-labels' htmlFor="email">
-                        Email Address{displayEmailError}
+                        Email Address
                     </Form.Label>
                     <Form.Control
-                        placeholder={errorMessage.split(' ')[0] === 'Email' ? errorMessage : null}
+                        placeholder={errorMessage && errorMessage.split(' ')[0] === 'Email' ? errorMessage : ''}
                         id="email"
                         type="email"
                         name="email"
@@ -69,7 +68,7 @@ function ContactForm() {
                     </Form.Label>
                     <Form.Control
                         as='textarea'
-                        placeholder={errorMessage.split(' ')[0] === 'Message' ? errorMessage : null}
+                        placeholder={errorMessage && errorMessage.split(' ')[0] === 'Message' ? errorMessage : ''}
                         id="message"
                         name="message"
                         onBlur={stage1Error}

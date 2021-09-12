@@ -1,6 +1,6 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/) ![badge](https://img.shields.io/github/languages/top/brobro10000/professional-react-profile)
-  # My React Profile 
+  # My React Portfolio
   ## **Description**
   This is a remake of my initial professional profile made here, redone as a single page applicatons using the following technologies.
   * [ReactJS](https://reactjs.org/) 
@@ -10,7 +10,7 @@
   
   Using these technologies, I was able to develop a unique professional portfolio that I could be proud to share with friends, families and future employers. Dynamically highlighting the repositories that are featured on my Github in my portfolio using the [Github API](https://docs.github.com/en/rest), we can always keep out featured projects up to date with nothing more then adding a picture to the directory, and importing the image. 
 
-  [Check out my portfolio!](brob)
+  [Check out my portfolio!](https://brobro10000.github.io/professional-react-profile)
 
   ---
 
