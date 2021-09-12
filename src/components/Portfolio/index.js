@@ -11,9 +11,9 @@ function Portfolio({ portfolioData, images }) {
     })
     return (
         <>
-            <Container>
+            <Container id='portfolioContainer'>
                 <Row>
-                    <Col s={12} m={4} lg={4}>
+                    <Col className='tocContainer' xs={12} s={12} m={4} lg={4}>
                         <ListGroup style={{ position: 'fixed' }} variant="flush">
                             <Accordion defaultActiveKey='4'>
                                 <Accordion.Item eventKey='4'>
@@ -27,7 +27,7 @@ function Portfolio({ portfolioData, images }) {
                             </Accordion>
                         </ListGroup>
                     </Col>
-                    <Col s={12} m={8} lg={8} className='col-container'>
+                    <Col xs={12} s={12} m={8} lg={8} className='col-container'>
                         {portfolioData.length > 0 && portfolioData.map(element => (
                             <Card key={'#' + element.name} id={element.name} className='project-card' style={{ width: '80%' }}>
                                 <Card.Header>

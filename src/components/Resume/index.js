@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col, Accordion, ListGroup } from 'react-bootstrap';
 
 function Resume({ resume }) {
+    var resume2 = resume 
     resume += '#zoom=65'
     return (
         <Container id='resume-container'>
@@ -11,7 +12,7 @@ function Resume({ resume }) {
                         <Accordion.Item eventKey="3">
                             <Accordion.Header>Technical Skills</Accordion.Header>
                             <Accordion.Body>
-                                <Accordion  flush >
+                                <Accordion flush >
                                     <Accordion.Item eventKey="0">
                                         <Accordion.Header>Web Development</Accordion.Header>
                                         <Accordion.Body>
@@ -54,7 +55,10 @@ function Resume({ resume }) {
                         </Accordion.Item>
                     </Accordion>
                 </Col>
-                <Col><iframe id='resume-iframe' src={resume}></iframe></Col>
+                <Col>
+                    <a id='resume-download' href={resume2} download='UllahHamzah' target="_blank" rel="noreferrer">Download</a>
+                    <iframe title='resume' id='resume-iframe' src={resume}></iframe>
+                </Col>
             </Row>
         </Container>
     );

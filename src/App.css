@@ -48,9 +48,10 @@ main {
   height:auto;
   min-height: 30vh;
   max-height: 80vh;
-  width:inherit;
-  max-width: 500px;
+  width:100%;
+  max-width: 750px;
   text-align: center;
+  overflow-x: inherit;
 }
 .card-body{
   width:100%;
@@ -62,6 +63,7 @@ main {
 
 .project-card{
   margin-bottom:10px;
+  width: 100% !important;
 }
 
 .col-container {
@@ -135,4 +137,52 @@ main {
   text-align: center !important;
   font-size: x-large !important;
   font-weight:bolder;
+}
+#portfolioContainer {
+  width: 95%;
+}
+@media screen and (max-width: 990px){
+  .tocContainer {
+    visibility: hidden;
+  }
+  #portfolioContainer {
+    width: 100%;
+    max-width: 100%;
+    margin:0px 0px 0px 0px !important;
+  }
+  .image {
+    height:auto;
+    min-height: 30vh;
+    max-height: 75vh;
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+  }
+  .myName{
+    font-size: xx-large !important;
+  }
+}
+#portrait {
+  height:auto;
+  width:100%;
+  max-width:100px;
+  margin-right:15px
+}
+@media screen and (max-width: 430px){
+  main {
+    margin-top: 100px;
+    margin-bottom:100px;
+  }
+  #portrait {
+    max-width:50px;
+  }
+  .myName{
+    font-size: large !important;
+  }
+}
+@media screen and (max-width: 322px){
+  .footerImg{
+    height:32px;
+    width: 32px;
+  }
 }

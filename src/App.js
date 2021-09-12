@@ -52,6 +52,7 @@ function App() {
   console.log(currentPage)
   useEffect(() => {
     request.onsuccess = (event) => {
+       // eslint-disable-next-line
       db = event.target.result;
       const api = db.transaction(['api'], 'readwrite');
       const apiObjectStore = api.objectStore('api');

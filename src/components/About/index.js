@@ -8,7 +8,7 @@ function About(props) {
             <Card id='aboutCard'>
                 <Row>
                     <Col md={3}>
-                        <Image id='aboutImage' src={me2} roundedCircle />
+                        <Image id='aboutImage' alt='Amazingly Handsome Man' src={me2} roundedCircle />
                     </Col>
                     <Col id="aboutText" md={9}>
                         <Card.Title id='aboutTitle' >
