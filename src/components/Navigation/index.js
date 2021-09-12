@@ -10,7 +10,7 @@ function Navigation(props) {
         <Image id='portrait' alt='Dev-Image' src={image} rounded />
         <Navbar.Brand className='myName'>Hamzah Ullah</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse align='end' id="responsive-navbar-nav">
           <Nav className="me-auto">
             {nav.map(nav => (
               <Nav.Link

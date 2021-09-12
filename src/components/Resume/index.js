@@ -7,7 +7,7 @@ function Resume({ resume }) {
     return (
         <Container id='resume-container'>
             <Row>
-                <Col>
+                <Col xs={12} s={12} md={4}>
                     <Accordion defaultActiveKey='3'>
                         <Accordion.Item eventKey="3">
                             <Accordion.Header>Technical Skills</Accordion.Header>
@@ -55,7 +55,7 @@ function Resume({ resume }) {
                         </Accordion.Item>
                     </Accordion>
                 </Col>
-                <Col>
+                <Col xs={12} s={12} md={8} lg={8}>
                     <a id='resume-download' href={resume2} download='UllahHamzah' target="_blank" rel="noreferrer">Download Resume</a>
                     <iframe title='resume' id='resume-iframe' src={resume}></iframe>
                 </Col>

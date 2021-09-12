@@ -5,12 +5,7 @@ main {
   margin-top: 175px;
   margin-bottom:100px;
 }
-:target::before {
-  content: "";
-  visibility: hidden;
-  display: block;
-  height: 0px; /* fixed header height*//* negative fixed header height */
-}
+
 .App {
   text-align: center;
  
@@ -58,6 +53,9 @@ main {
   max-width: 750px;
   text-align: center;
   overflow-x: inherit;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 2px 13px 7px rgba(0,0,0,0.34); 
+box-shadow: 0px 10px 13px -7px #000000, -1px 2px 13px 7px rgba(0,0,0,0.34);
+  
 }
 .card-body{
   width:100%;
@@ -70,6 +68,9 @@ main {
 .project-card{
   margin-bottom:10px;
   width: 100% !important;
+  border-style: ridge !important;
+  border-color: cornflowerblue !important;
+  border-width:2.5px !important;
 }
 
 .col-container {
@@ -112,11 +113,13 @@ main {
   border-color: cornflowerblue;
 }
 #headerNav {
+  border-width: 7.5px;
   border-top:none;
   border-right:none;
   border-left:none;
 }
 #footerNav {
+  border-width: 7.5px;
   border-bottom:none;
   border-right:none;
   border-left:none;
@@ -166,7 +169,18 @@ main {
 .buttonContainer {
   text-align: center;
 }
-
+.card-header, .card-footer {
+  background-color:rgb(235, 235, 235) !important;
+  border-style: ridge !important;
+  border-color: cornflowerblue !important;
+  border-width: 2.5px !important;
+  border-top:none !important;
+  border-left:none !important;
+  border-right: none !important;
+}
+.card-title {
+  font-size: xx-large !important;
+}
 @media screen and (max-width: 990px){
   .tocContainer {
     visibility: hidden;
@@ -193,9 +207,7 @@ main {
     margin-top: 100px;
     margin-bottom:100px;
   }
-  :target::before {
-    margin: -100px 0 0; /* negative fixed header height */
-  }
+
   #portrait {
     max-width:50px;
   }
