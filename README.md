@@ -12,10 +12,11 @@
 
   [Check out my portfolio!](https://brobro10000.github.io/professional-react-profile)
 
+   ![Description](src/assets/images/homepageSS.png)
+
   ---
 
   ## **Table of Contents**
-  * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
   * [License(s)](#license)
@@ -23,15 +24,25 @@
   * [Tests](#tests)
   * [Questions](#questions)
    
-  ---
 
-  ## **Installation**
-  Simply navigate to
 
   ---
 
   ## **Usage**
-  To present my accomplishments
+  To use this application, navigate to [https://brobro10000.github.io/professional-react-profile/](https://brobro10000.github.io/professional-react-profile/) or click [here](https://brobro10000.github.io/professional-react-profile/).
+  
+ ![Header](src/assets/images/headerSS.png)
+
+ Once you arrive, you are greeted with a navigation bar up top, and a short description about me, as well as a motto. Never stop learning new things! By default, you load into the 'About' section of the homepage.
+
+ ![Portfolio1](src/assets/images/portfoliSS.png)
+
+ In the portfolio section, you have an interactable table of contents on the left for my featured repositories on [Github](https://github.com/brobro10000/), as well an ability to scroll through them on the right. 
+
+ ![Portfolio2](src/assets/images/indexdb1SS.png)
+
+ On click, it will replace the first item on the list, so no scrolling is necessary! If you do scroll, the table of contents will return you to the top of the page. 
+ Each project has a link to the website and deployed application.
 
   ---
 

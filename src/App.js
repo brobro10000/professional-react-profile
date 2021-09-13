@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import budget from './assets/images/budget-analysis-and-visualizer.png'
 import crypto from './assets/images/Crypto-Tycoon.png'
 import potluck from './assets/images/potluck-chefs.png'
-import rprofile from './assets/images/react-profile.png'
+import rprofile from './assets/images/professional-react-profile.png'
 import rot from './assets/images/repository-of-thought.png'
 import wd from './assets/images/weather-dashboard.png'
 import resume from './assets/files/UllahHamzahResume.pdf'
