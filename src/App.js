@@ -49,7 +49,6 @@ function App() {
       default: return <About />
     }
   };
-  console.log(currentPage)
   useEffect(() => {
     request.onsuccess = (event) => {
        // eslint-disable-next-line
@@ -79,11 +78,11 @@ function App() {
                     }
                   if (data[0].environment === 'github-pages') {
                     if (element === `brobro10000.github.io`) {
-                      saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `brobro10000.github.io` })
-                      return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `brobro10000.github.io` }])
+                      saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io` })
+                      return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io` }])
                     }
-                    saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `brobro10000.github.io/${element}` })
-                    return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `brobro10000.github.io/${element}` }])
+                    saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io/${element}` })
+                    return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io/${element}` }])
                   } else if (data[0].description === 'Heroku') {
                     saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: data[0].payload.web_url })
                     return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: data[0].payload.web_url }])
