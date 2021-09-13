@@ -11,12 +11,10 @@ function ContactForm() {
         return <p id='returnMessage'>We Received your Message!</p>;
     }
     function stage1Error(e) {
-        console.log(e.target.value)
         if (e.target.value === '')
             return setErrorMessage(capitalizeFirstLetter(e.target.name) + " is required")
         if (e.target.name === 'email') {
             const isValid = validateEmail(e.target.value);
-            console.log(isValid);
             // isValid conditional statement
             if (!isValid) {
                 setErrorMessage('Email is Invalid');

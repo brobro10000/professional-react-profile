@@ -3,9 +3,7 @@ import { Card, Container, Row, Col, ListGroup, Accordion } from 'react-bootstrap
 
 function Portfolio({ portfolioData, images }) {
     const [topItem,setTop] = useState([portfolioData, 0])
-    console.log(images)
     images.forEach(element1 => {
-        console.log(element1)
         var imgname = element1.split('/')[3].split('.')[0]
         portfolioData.forEach(element2 => {
             if (element2.name === imgname)

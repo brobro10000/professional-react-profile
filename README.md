@@ -21,7 +21,6 @@
   * [Credits](#credits)
   * [License(s)](#license)
   * [Contributers](#contributers)
-  * [Tests](#tests)
   * [Questions](#questions)
    
 
@@ -44,6 +43,18 @@
  On click, it will replace the first item on the list, so no scrolling is necessary! If you do scroll, the table of contents will return you to the top of the page. 
  Each project has a link to the website and deployed application.
 
+  ![Contact](src/assets/images/contactSS.png)
+
+Using [Formspree](https://formspree.io/), we can create a contact form that will send an email to my personal inbox for me to respond to the sender given the provided email is correct.
+
+  ![Contact2](src/assets/images/contact2.png)
+
+  If the user enters an empty field or invalid email, a dialogue will appear or a placeholder message will appear for the user to enter the information correctly.
+
+  ![Resume](src/assets/images/professional-react-profile.png)
+
+  In the resume section, you can view a drop down of technical skills and coding languages known by me!
+
   ---
 
   ## **Credits**
@@ -60,11 +71,6 @@
 
   ## **Contributers**
    Contributing to the Project is Restricted 
-
-  ---
-
-  ## **Tests**
-  none
 
   ---
 
