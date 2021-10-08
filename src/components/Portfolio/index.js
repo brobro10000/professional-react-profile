@@ -25,7 +25,9 @@ function Portfolio({ portfolioData, images }) {
     useEffect(() => {
          window.scrollTo(0,0)
     }, [topItem])
-
+    portfolioData.forEach(element => {
+        console.log(element.deployment)
+    })
     return (
         <>
             <Container id='portfolioContainer'>
