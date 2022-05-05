@@ -45,13 +45,13 @@ function App() {
         return portfolioData.length > 0 ?
           <Portfolio portfolioData={portfolioData} images={imgArr} /> : <></>
       case 'Resume':
-        return <Resume resume = {resume} />
+        return <Resume resume={resume} />
       default: return <About />
     }
   };
   useEffect(() => {
     request.onsuccess = (event) => {
-       // eslint-disable-next-line
+      // eslint-disable-next-line
       db = event.target.result;
       const api = db.transaction(['api'], 'readwrite');
       const apiObjectStore = api.objectStore('api');
@@ -60,9 +60,10 @@ function App() {
         if (getAll.result.length === 6) {
           return setportfolioData(getAll.result)
         } else {
-          return fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=brobro10000')
-            .then(res => res.text())
+          return fetch("https://api.github.com/users/brobro10000/repos")
+            .then(res => res.json())
             .then(res => {
+              console.log(res)
               var arr = []
               res.split(`"repo":"`).forEach(element => {
                 arr.push(element.split(`",`)[0])
