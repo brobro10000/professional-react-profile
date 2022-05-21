@@ -17,7 +17,7 @@ import wd from './assets/images/weather-dashboard.png'
 import resume from './assets/files/UllahHamzahResume.pdf'
 function App() {
   const [portfolioData, setportfolioData] = useState([])
-  const [currentPage, handlePageChange] = useState('About');
+  const [currentPage, handlePageChange] = useState('Portfolio');
   const imgArr = [budget, crypto, potluck, rprofile, rot, wd]
   let db;
   const request = indexedDB.open('apiCalls', 1);
@@ -41,12 +41,13 @@ function App() {
     switch (currentPage) {
       case 'Contact':
         return <ContactForm />
-      case 'Portfolio':
-        return portfolioData.length > 0 ?
-          <Portfolio portfolioData={portfolioData} images={imgArr} /> : <></>
+      // case 'Portfolio':
+      //   return portfolioData.length > 0 ?
+      //     <Portfolio portfolioData={portfolioData} images={imgArr} /> : <></>
       case 'Resume':
         return <Resume resume={resume} />
-      default: return <About />
+      default: return portfolioData.length > 0 ?
+        <Portfolio portfolioData={portfolioData} images={imgArr} /> : <></>
     }
   };
   useEffect(() => {
@@ -60,13 +61,12 @@ function App() {
         if (getAll.result.length === 6) {
           return setportfolioData(getAll.result)
         } else {
-          return ['budget-analysis-and-visualizer', 'Crypto-Tycoon', 'potluck-chefs', 'professional-react-profile', 'repository-of-thought', 'weather-dashboard'].forEach(element => {
+          return ['budget-analysis-and-visualizer', 'Crypto-Tycoon', 'professional-react-profile', 'repository-of-thought', 'weather-dashboard-v2'].forEach((element, index) => {
+            if (index < 1) {
+              saveRecord({ name: element, repo: `https://www.github.com/brobro10000/potluck-chefs`, deployment: `https://potluck-chef.herokuapp.com/` })
+              return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/potluck-chefs`, deployment: `https://potluck-chef.herokuapp.com/` }])
+            }
             fetch(`https://api.github.com/repos/brobro10000/${element}/deployments`).then(res => res.json()).then(data => {
-              if (data.length < 1)
-                if (element === 'potluck-chefs') {
-                  saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `https://potluck-chef.herokuapp.com/` })
-                  return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `https://potluck-chef.herokuapp.com/` }])
-                }
               if (data[0].environment === 'github-pages') {
                 if (element === `brobro10000.github.io`) {
                   saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io` })
@@ -80,7 +80,6 @@ function App() {
               }
             })
           })
-          // });
         }
       }
     }
@@ -93,9 +92,9 @@ function App() {
       <main>
         {renderPage()}
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 

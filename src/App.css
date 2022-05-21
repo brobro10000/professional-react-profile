@@ -1,15 +1,26 @@
-*{
+* {
   font-family: 'Tenor Sans', sans-serif;
 }
+
+#root {
+  background: #64748b;
+  padding-bottom: 25px;
+}
+
+#sub-root {
+  margin: 1.5rem;
+}
+
 main {
-  margin-top: 175px;
-  margin-bottom:100px;
+  margin-top: 100px;
+  padding-top: 25px;
 }
 
 .App {
   text-align: center;
- 
+
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -40,103 +51,128 @@ main {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 .image {
-  height:auto;
-  min-height: 30vh;
-  max-height: 80vh;
-  width:100%;
-  max-width: 750px;
+  height: auto;
+  min-height: 70vh;
+  width: 100%;
   text-align: center;
   overflow-x: inherit;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 2px 13px 7px rgba(0,0,0,0.34); 
-box-shadow: 0px 10px 13px -7px #000000, -1px 2px 13px 7px rgba(0,0,0,0.34);
-  
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px 2px 13px 7px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 10px 13px -7px #000000, -1px 2px 13px 7px rgba(0, 0, 0, 0.34);
+
 }
-.card-body{
-  width:100%;
+
+.card-body {
+  width: 100%;
   background: aliceblue;
 }
-.link-title{
+
+.link-title {
   text-align: center;
 }
 
-.project-card{
-  margin-bottom:10px;
+.project-card {
+  margin-bottom: 25px;
   width: 100% !important;
   border-style: ridge !important;
   border-color: cornflowerblue !important;
-  border-width:2.5px !important;
+  border-width: 2.5px !important;
 }
 
 .col-container {
   text-align: -webkit-center;
 }
-.myName{
+
+.myName {
   font-size: xxx-large !important;
 }
+
 .footer-container {
   justify-content: center !important;
 }
+
 .form-labels {
   font-size: large;
   text-decoration: underline;
   text-decoration-color: cornflowerblue;
 }
+
 .error {
-  color:red
+  color: red
 }
+
 .submitButton {
   text-align: center;
-  margin-top:10px;
+  margin-top: 10px;
 }
+
 #resume-container {
   width: 100%;
-  height:100%;
+  height: 100%;
   min-height: 500px;
   text-align: center;
 }
+
 #resume-iframe {
   width: 90%;
-  height:100%;
+  height: 100%;
   min-height: 700px;
 }
-#aboutContainer{
-  margin-top: 25px;
+
+#aboutContainer {
+  position: fixed;
+  width: inherit;
 }
-#aboutImage,#portrait, .navbar, #aboutCard, #formContainer {
+
+#aboutImage,
+#portrait,
+.navbar,
+#aboutCard,
+#formContainer {
   border-style: ridge;
   border-color: cornflowerblue;
 }
+
 #headerNav {
   border-width: 7.5px;
-  border-top:none;
-  border-right:none;
-  border-left:none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
+
 #footerNav {
   border-width: 7.5px;
-  border-bottom:none;
-  border-right:none;
-  border-left:none;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
 }
+
 #aboutCard {
   padding: 15px;
   border-width: 5px;
   background: aliceblue;
 }
+
+#aboutImageContainer {
+  text-align: -webkit-center;
+}
+
 #aboutImage {
-  height:auto;
+  height: auto;
+  max-width: 300px;
   width: 100%;
   border-style: outset;
   border-color: cornflowerblue;
 }
+
 #aboutTitle {
-  margin:5px;
+  margin: 5px;
   text-align: center;
   font-size: x-large;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -144,84 +180,158 @@ box-shadow: 0px 10px 13px -7px #000000, -1px 2px 13px 7px rgba(0,0,0,0.34);
   text-decoration-color: cornflowerblue;
 }
 
-#aboutText{
+#aboutText {
   align-self: center;
 }
+
 #mission {
   text-align: center !important;
   font-size: x-large !important;
-  font-weight:bolder;
+  font-weight: bolder;
 }
+
 #portfolioContainer {
-  width: 95%;
+  width: 100%;
 }
+
 #portrait {
-  height:auto;
-  width:100%;
-  max-width:100px;
-  margin-right:15px
+  height: auto;
+  width: 100%;
+  max-width: 100px;
+  margin-right: 15px
 }
+
 #formContainer {
-  padding:25px;
+  padding: 25px;
   background: aliceblue;
   border-radius: 5px;
 }
+
 .buttonContainer {
   text-align: center;
 }
-.card-header, .card-footer {
-  background-color:rgb(235, 235, 235) !important;
+
+.card-header,
+.card-footer {
+  background-color: rgb(235, 235, 235) !important;
   border-style: ridge !important;
   border-color: cornflowerblue !important;
   border-width: 2.5px !important;
-  border-top:none !important;
-  border-left:none !important;
+  border-top: none !important;
+  border-left: none !important;
   border-right: none !important;
+  display: flex;
+  justify-content: center;
 }
+
+.card-footer div {
+  font-size: 25px;
+}
+
 .card-title {
   font-size: xx-large !important;
 }
+
 #returnMessage {
   text-align: center;
   font-size: xx-large;
 }
-@media screen and (max-width: 990px){
+
+.tocContainer {
+  display: flex;
+  justify-content: center
+}
+
+#aboutTopLevel {
+  position: fixed;
+  width: inherit;
+}
+
+#responsive-navbar-nav {
+  display: flex;
+  flex-flow: row;
+}
+
+#navCollection {
+  flex-direction: row;
+}
+
+#navCollection a {
+  margin: 0 10px
+}
+
+hr {
+  display: none;
+}
+
+.footerImg {
+  padding: 0 !important;
+}
+
+@media screen and (max-width: 990px) {
+  hr {
+    display: block;
+  }
+
   .tocContainer {
     visibility: hidden;
   }
-#portfolioContainer {
+
+  #aboutContainer {
+    position: relative;
+  }
+
+  #portfolioContainer {
     width: 100%;
     max-width: 100%;
-    margin:0px 0px 0px 0px !important;
+    margin: 0px 0px 0px 0px !important;
   }
+
   .image {
-    height:auto;
-    min-height: 30vh;
-    max-height: 75vh;
+    height: auto;
+    aspect-ratio: auto !important;
     width: 100%;
-    max-width: 750px;
     text-align: center;
   }
-  .myName{
+
+  .myName {
     font-size: xx-large !important;
   }
 }
-@media screen and (max-width: 430px){
+
+@media screen and (max-width:470px) {
+  #responsive-navbar-nav {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #navCollection {
+    flex: 0 0 100%;
+    justify-content: space-around;
+  }
+
+  #navCollection a {
+    margin: 0 10px
+  }
+}
+
+@media screen and (max-width: 430px) {
   main {
     margin-top: 100px;
-    margin-bottom:100px;
   }
 
   #portrait {
-    max-width:50px;
+    max-width: 50px;
   }
-  .myName{
+
+  .myName {
     font-size: large !important;
   }
 }
-@media screen and (max-width: 322px){
-  .footerImg{
-    height:32px;
+
+@media screen and (max-width: 322px) {
+  .footerImg {
+    height: 32px;
     width: 32px;
   }
 }
