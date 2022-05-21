@@ -69,11 +69,11 @@ function App() {
             fetch(`https://api.github.com/repos/brobro10000/${element}/deployments`).then(res => res.json()).then(data => {
               if (data[0].environment === 'github-pages') {
                 if (element === `brobro10000.github.io`) {
-                  saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io` })
-                  return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io` }])
+                  saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `https://brobro10000.github.io` })
+                  return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `https://brobro10000.github.io` }])
                 }
                 saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io/${element}` })
-                return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `http://brobro10000.github.io/${element}` }])
+                return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `https://brobro10000.github.io/${element}` }])
               } else if (data[0].description === 'Heroku') {
                 saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: data[0].payload.web_url })
                 return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: data[0].payload.web_url }])
