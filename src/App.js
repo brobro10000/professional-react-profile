@@ -61,12 +61,13 @@ function App() {
         if (getAll.result.length === 6) {
           return setportfolioData(getAll.result)
         } else {
-          return ['budget-analysis-and-visualizer', 'Crypto-Tycoon', 'professional-react-profile', 'repository-of-thought', 'weather-dashboard-v2'].forEach((element, index) => {
+          return ['potluck-chefs', 'budget-analysis-and-visualizer', 'Crypto-Tycoon', 'professional-react-profile', 'repository-of-thought', 'weather-dashboard-v2'].forEach((element, index) => {
             if (index < 1) {
               saveRecord({ name: element, repo: `https://www.github.com/brobro10000/potluck-chefs`, deployment: `https://potluck-chef.herokuapp.com/` })
               return setportfolioData((state) => [...state, { name: element, repo: `https://www.github.com/brobro10000/potluck-chefs`, deployment: `https://potluck-chef.herokuapp.com/` }])
             }
             fetch(`https://api.github.com/repos/brobro10000/${element}/deployments`).then(res => res.json()).then(data => {
+              console.log(data)
               if (data[0].environment === 'github-pages') {
                 if (element === `brobro10000.github.io`) {
                   saveRecord({ name: element, repo: `https://www.github.com/brobro10000/${element}`, deployment: `https://brobro10000.github.io` })

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container, Row, Col, ListGroup, Accordion } from 'react-bootstrap';
 import About from '../About';
+import { BsArrowsAngleExpand } from 'react-icons/bs'
 function Portfolio({ portfolioData, images }) {
     const [topItem, setTop] = useState([portfolioData, 0])
     images.forEach(element1 => {
@@ -45,17 +46,15 @@ function Portfolio({ portfolioData, images }) {
                                     <Card.Title>{element.name}</Card.Title>
                                 </Card.Header>
                                 <Card.Body >
-                                    <iframe className='image' src={element.deployment} />
+                                    <iframe title={element.deployment} className='image' src={element.deployment} />
                                 </Card.Body>
                                 <Card.Footer>
-                                    <Row>
-                                        <Col>
-                                            <Card.Link href={element.repo} target='_blank'>Repository</Card.Link>
-                                        </Col>
-                                        <Col>
-                                            <Card.Link href={element.deployment} target='_blank'>Website</Card.Link>
-                                        </Col>
-                                    </Row>
+                                    <Col xs={12} s={12} m={4} lg={1}>
+                                        <BsArrowsAngleExpand className='popout' alt="Github Logo" fill='#406099' />
+                                    </Col>
+                                    <Col xs={12} s={12} m={4} lg={11} className='text-center'>
+                                        <Card.Link className='me-5' href={element.repo} target='_blank'>Repository</Card.Link>
+                                    </Col>
                                 </Card.Footer>
                             </Card>
                         ))}
